@@ -2,7 +2,6 @@
 using namespace std;
 //*************************MACROS*************************
 #define endl "\n"
-#define MOD = 1000000007
 
 #define rep(i, k, n) for (i = k; i < n; ++i)
 #define repr(i, k, n) for (i = n; i >= k; i--)
