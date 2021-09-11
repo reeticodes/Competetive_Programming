@@ -13,18 +13,37 @@ using namespace std;
     cout << arr[i] << " ";  \
   cout << endl;
 
-//*************************HELPER FUNCTIONS*************************
-string dectobin(int n)
-{
-  return bitset<8>(n).to_string();
-}
-bool ispoweroftwo(long n)
-{
-  return n && !(n && (n - 1));
-}
+//*************************MACROS*************************
 
 void solve()
 {
+  int n;
+  cin >> n;
+  string s;
+  cin >> s;
+
+  int l = 0, r = 0;
+  int a = 0, b = 0;
+
+  for (int i = 0; i < n; i++)
+  {
+    a = 0;
+    b = 0;
+    for (int j = i; j < n; j++)
+    {
+
+      if (s[j] == 'a')
+        a++;
+      else
+        b++;
+      if (a != 0 && b != 0 && a == b)
+      {
+        cout << i + 1 << " " << j + 1 << endl;
+        return;
+      }
+    }
+  }
+  cout << -1 << " " << -1 << endl;
 }
 
 int main()

@@ -12,8 +12,6 @@ using namespace std;
   for (i = 0; i < n; i++)   \
     cout << arr[i] << " ";  \
   cout << endl;
-
-//*************************HELPER FUNCTIONS*************************
 string dectobin(int n)
 {
   return bitset<8>(n).to_string();
@@ -22,9 +20,49 @@ bool ispoweroftwo(long n)
 {
   return n && !(n && (n - 1));
 }
+//*************************MACROS*************************
+int xorc(int n)
+{
 
+  // If n is a multiple of 4
+  if (n % 4 == 0)
+    return n;
+
+  // If n%4 gives remainder 1
+  if (n % 4 == 1)
+    return 1;
+
+  // If n%4 gives remainder 2
+  if (n % 4 == 2)
+    return n + 1;
+
+  // If n%4 gives remainder 3
+  return 0;
+}
 void solve()
 {
+  int a, b;
+  cin >> a >> b;
+
+  int x = xorc(a - 1);
+
+  //first case
+  if (x == b)
+  {
+    cout << a << endl;
+    return;
+  }
+
+  int xb = x ^ b;
+
+  //second case... 1,xb^1,x
+  if (xb == a)
+  {
+    cout << a + 2 << endl;
+    return;
+  }
+  //third case...xb,x
+  cout << a + 1 << endl;
 }
 
 int main()
