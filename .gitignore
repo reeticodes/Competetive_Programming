@@ -1,2 +1,6 @@
 /.cph/*
 /.vscode/*
+/.Error.txt
+/inputf.txt
+/output.txt
+/solve.cpp
