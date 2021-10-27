@@ -29,6 +29,25 @@ bool ispoweroftwo(long n)
 {
   return n && !(n && (n - 1));
 }
+int gcd(int a, int b)
+{
+  if (b == 0)
+    return a;
+  return gcd(b, a % b);
+}
+ll power(ll a, ll b, ll m = MOD)
+{
+  a %= m;
+  ll res = 1;
+  while (b)
+  {
+    if (b % 2)
+      res = res * a % m;
+    a = a * a % m;
+    b /= 2;
+  }
+  return res;
+}
 void init_code()
 {
 
@@ -53,20 +72,6 @@ int main()
   }
 
   return 0;
-}
-
-ll power(ll a, ll b, ll m = MOD)
-{
-  a %= m;
-  ll res = 1;
-  while (b)
-  {
-    if (b % 2)
-      res = res * a % m;
-    a = a * a % m;
-    b /= 2;
-  }
-  return res;
 }
 
 void solve()
